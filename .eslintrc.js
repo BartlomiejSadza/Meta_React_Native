@@ -44,7 +44,7 @@ module.exports = {
 		"import/resolver": {
 			alias: {
 				map: [
-					["@"], //ścieżka do katalogu źródłowego
+					["@", "./components"], //ścieżka do katalogu źródłowego
 				],
 				extensions: [".ts", ".tsx", ".js", ".jsx", ".json"],
 			},

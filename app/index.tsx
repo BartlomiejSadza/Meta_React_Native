@@ -1,7 +1,7 @@
 import { Text, View, StyleSheet } from "react-native";
 
-import LittleLemonHeader from "@/components/LittleLemonHeader";
-import Footer from "@/components/Footer";
+import LittleLemonHeader from "../components/LittleLemonHeader";
+import Footer from "../components/Footer";
 
 export default function Index() {
 	return (
@@ -23,7 +23,6 @@ const styles = StyleSheet.create({
 		alignItems: "center",
 		flex: 1,
 		justifyContent: "center",
-		trerere,
 	},
 	footer: {
 		bottom: 0,

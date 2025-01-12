@@ -29,7 +29,9 @@ module.exports = {
 		"react/prop-types": "off",
 		"react/react-in-jsx-scope": "off",
 		"react/jsx-filename-extension": [1, { extensions: [".tsx"] }],
+
 		"react-native/no-inline-styles": "off",
+		"react-native/no-color-literals": "off",
 
 		"no-console": "warn",
 		"no-debugger": "error",

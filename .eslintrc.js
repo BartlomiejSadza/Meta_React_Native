@@ -21,7 +21,19 @@ module.exports = {
 	},
 	plugins: ["react", "react-native", "@typescript-eslint"],
 	rules: {
-		// Dodaj swoje własne reguły tutaj
+		"@typescript-eslint/no-unused-vars": ["error", { argsIgnorePattern: "^_" }],
+		"@typescript-eslint/explicit-function-return-type": "off",
+		"@typescript-eslint/no-explicit-any": "warn",
+		"@typescript-eslint/consistent-type-definitions": ["error", "interface"],
+
+		"react/prop-types": "off",
+		"react/react-in-jsx-scope": "off",
+		"react/jsx-filename-extension": [1, { extensions: [".tsx"] }],
+		"react-native/no-inline-styles": "off",
+
+		"no-console": "warn",
+		"no-debugger": "error",
+		semi: ["error", "always"],
 	},
 	settings: {
 		react: {
@@ -30,7 +42,7 @@ module.exports = {
 		"import/resolver": {
 			alias: {
 				map: [
-					["@", "./app-example"], // Dostosuj ścieżkę do katalogu źródłowego
+					["@"], //ścieżka do katalogu źródłowego
 				],
 				extensions: [".ts", ".tsx", ".js", ".jsx", ".json"],
 			},

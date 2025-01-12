@@ -20,13 +20,13 @@ const styles = StyleSheet.create({
 		flex: 1,
 	},
 	content: {
+		alignItems: "center",
 		flex: 1,
 		justifyContent: "center",
-		alignItems: "center",
 	},
 	footer: {
-		position: "absolute",
 		bottom: 0,
+		position: "absolute",
 		width: "100%",
 	},
 });

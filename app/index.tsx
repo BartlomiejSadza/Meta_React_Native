@@ -23,7 +23,7 @@ const styles = StyleSheet.create({
 		alignItems: "center",
 		flex: 1,
 		justifyContent: "center",
-		trerere
+		trerere,
 	},
 	footer: {
 		bottom: 0,

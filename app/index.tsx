@@ -1,18 +1,32 @@
-import { View, StyleSheet } from "react-native";
+import { View, Text, StyleSheet, TextInput } from "react-native";
+import { useState } from "react";
 import Colors from "constants/Colors";
 
 import LittleLemonHeader from "components/LittleLemonHeader";
 import Footer from "components/Footer";
 import WelcomeScreen from "components/WelcomeScreen";
-import MenuItems from "components/MenuItems";
 
 export default function Index() {
+	const [feedback, setFeedback] = useState("");
+
 	return (
 		<View style={styles.container}>
 			<LittleLemonHeader />
 			<View style={styles.content}>
 				<WelcomeScreen />
-				<MenuItems />
+				<TextInput
+					style={{
+						color: "black",
+						minHeight: 50,
+						margin: 50,
+						backgroundColor: "white",
+					}}
+					value={feedback}
+					placeholder={"Put your feedback here"}
+					placeholderTextColor={"gray"}
+					onChangeText={setFeedback}
+				/>
+				<Text style={styles.content}>{feedback}</Text>
 			</View>
 			<View style={styles.footer}>
 				<Footer />

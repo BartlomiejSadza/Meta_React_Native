@@ -1,29 +1,28 @@
-import { Text, View, ViewStyle } from "react-native";
+import { Text, View, StyleSheet } from "react-native";
+import Colors from "constants/Colors";
 
-interface FooterProps {
-	ContainerStyle?: ViewStyle;
-}
-
-export default function Footer({ ContainerStyle }: FooterProps) {
+export default function Footer() {
 	return (
-		<View style={ContainerStyle}>
-			<View
-				style={{
-					flex: 0.05,
-					backgroundColor: "#F4CE14",
-				}}>
-				<Text
-					style={{
-						padding: 5,
-						fontSize: 20,
-						color: "black",
-						alignItems: "center",
-						textAlign: "center",
-						marginBottom: 20,
-					}}>
-					All rights for you, shocked??
-				</Text>
+		<View style={styles.container}>
+			<View style={{}}>
+				<Text style={styles.title}>All rights for you, shocked??</Text>
 			</View>
 		</View>
 	);
 }
+
+const styles = StyleSheet.create({
+	container: {
+		flex: 0.1,
+		position: "relative",
+		backgroundColor: Colors.heading,
+	},
+	title: {
+		padding: 5,
+		fontSize: 20,
+		color: Colors.text,
+		alignItems: "center",
+		textAlign: "center",
+		marginBottom: 20,
+	},
+});

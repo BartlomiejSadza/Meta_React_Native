@@ -32,11 +32,12 @@ module.exports = {
 
 		"react-native/no-inline-styles": "off",
 		"react-native/no-color-literals": "off",
+		"react-native/sort-styles": "off",
 
 		"no-console": "warn",
 		"no-debugger": "error",
 		semi: ["error", "always"],
-		"sort-keys": "off",
+		// "sort-keys": "off",
 	},
 	settings: {
 		react: {

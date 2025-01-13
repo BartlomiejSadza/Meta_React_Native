@@ -1,4 +1,5 @@
 import { View, Text, StyleSheet } from "react-native";
+import Colors from "constants/Colors";
 
 export default function LittleLemonHeader() {
 	return (
@@ -11,12 +12,12 @@ export default function LittleLemonHeader() {
 const headerStyles = StyleSheet.create({
 	container: {
 		alignItems: "center",
-		backgroundColor: "#F4CE14",
-		flex: 0.1,
+		backgroundColor: Colors.heading,
+		flex: 0.15,
 	},
 	title: {
-		bottom: 0,
-		color: "black",
+		marginTop: 50,
+		color: Colors.text,
 		fontSize: 30,
 		padding: 10,
 	},

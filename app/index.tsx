@@ -1,4 +1,5 @@
-import { View, StyleSheet, ScrollView } from "react-native";
+import { View, StyleSheet } from "react-native";
+import Colors from "constants/Colors";
 
 import LittleLemonHeader from "components/LittleLemonHeader";
 import Footer from "components/Footer";
@@ -10,23 +11,22 @@ export default function Index() {
 		<View style={styles.container}>
 			<LittleLemonHeader />
 			<View style={styles.content}>
-				<ScrollView>
-					<WelcomeScreen />
-					<MenuItems />
-				</ScrollView>
+				<WelcomeScreen />
+				<MenuItems />
 			</View>
-			<Footer ContainerStyle={styles.footer} />
+			<View style={styles.footer}>
+				<Footer />
+			</View>
 		</View>
 	);
 }
 
 const styles = StyleSheet.create({
 	container: {
-		backgroundColor: "#495E57",
+		backgroundColor: Colors.background,
 		flex: 1,
 	},
 	content: {
-		alignItems: "center",
 		flex: 1,
 		padding: 10,
 	},

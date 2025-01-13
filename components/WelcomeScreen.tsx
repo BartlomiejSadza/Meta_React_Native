@@ -1,4 +1,5 @@
 import { View, Text, StyleSheet } from "react-native";
+import Colors from "constants/Colors";
 
 export default function WelcomeScreen() {
 	return (
@@ -15,17 +16,16 @@ export default function WelcomeScreen() {
 
 const screenStyles = StyleSheet.create({
 	container: {
-		backgroundColor: "#495E57",
-		flex: 1,
+		flex: 0.4,
 	},
 	title: {
-		color: "#EDEFEE",
+		color: Colors.text,
 		fontSize: 30,
-		padding: 40,
+		padding: 20,
 		textAlign: "center",
 	},
 	text: {
-		color: "#EDEFEE",
+		color: Colors.text,
 		fontSize: 24,
 		marginVertical: 8,
 		padding: 20,

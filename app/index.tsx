@@ -1,15 +1,19 @@
-import { View, StyleSheet } from "react-native";
+import { View, StyleSheet, ScrollView } from "react-native";
 
-import LittleLemonHeader from "../components/LittleLemonHeader";
-import Footer from "../components/Footer";
-import WelcomeScreen from "../components/WelcomeScreen";
+import LittleLemonHeader from "components/LittleLemonHeader";
+import Footer from "components/Footer";
+import WelcomeScreen from "components/WelcomeScreen";
+import MenuItems from "components/MenuItems";
 
 export default function Index() {
 	return (
 		<View style={styles.container}>
 			<LittleLemonHeader />
 			<View style={styles.content}>
-				<WelcomeScreen />
+				<ScrollView>
+					<WelcomeScreen />
+					<MenuItems />
+				</ScrollView>
 			</View>
 			<Footer ContainerStyle={styles.footer} />
 		</View>

@@ -36,6 +36,7 @@ module.exports = {
 		"no-console": "warn",
 		"no-debugger": "error",
 		semi: ["error", "always"],
+		"sort-keys": "off",
 	},
 	settings: {
 		react: {

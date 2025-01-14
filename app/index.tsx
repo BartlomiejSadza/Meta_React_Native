@@ -1,4 +1,4 @@
-import { View, Text, StyleSheet, TextInput } from "react-native";
+import { View, Text, StyleSheet, TextInput, ScrollView } from "react-native";
 import { useState } from "react";
 import Colors from "constants/Colors";
 
@@ -14,18 +14,20 @@ export default function Index() {
 			<LittleLemonHeader />
 			<View style={styles.content}>
 				<WelcomeScreen />
-				<TextInput
-					style={{
-						color: "black",
-						minHeight: 50,
-						margin: 50,
-						backgroundColor: "white",
-					}}
-					value={feedback}
-					placeholder={"Put your feedback here"}
-					placeholderTextColor={"gray"}
-					onChangeText={setFeedback}
-				/>
+				<ScrollView keyboardDismissMode='on-drag'>
+					<TextInput
+						style={{
+							color: "black",
+							minHeight: 50,
+							margin: 50,
+							backgroundColor: "white",
+						}}
+						value={feedback}
+						placeholder={"Put your feedback here"}
+						placeholderTextColor={"gray"}
+						onChangeText={setFeedback}
+					/>
+				</ScrollView>
 				<Text style={styles.content}>{feedback}</Text>
 			</View>
 			<View style={styles.footer}>

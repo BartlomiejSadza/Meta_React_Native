@@ -1,4 +1,11 @@
-import { View, Text, StyleSheet, TextInput, ScrollView } from "react-native";
+import {
+	View,
+	StyleSheet,
+	TextInput,
+	ScrollView,
+	KeyboardAvoidingView,
+	Alert,
+} from "react-native";
 import { useState } from "react";
 import Colors from "constants/Colors";
 
@@ -7,28 +14,37 @@ import Footer from "components/Footer";
 import WelcomeScreen from "components/WelcomeScreen";
 
 export default function Index() {
-	const [feedback, setFeedback] = useState("");
+	const [email, onChangeEmail] = useState("");
+	const [password, onChangePassword] = useState("");
 
 	return (
 		<View style={styles.container}>
 			<LittleLemonHeader />
 			<View style={styles.content}>
 				<WelcomeScreen />
-				<ScrollView keyboardDismissMode='on-drag'>
-					<TextInput
-						style={{
-							color: "black",
-							minHeight: 50,
-							margin: 50,
-							backgroundColor: "white",
-						}}
-						value={feedback}
-						placeholder={"Put your feedback here"}
-						placeholderTextColor={"gray"}
-						onChangeText={setFeedback}
-					/>
-				</ScrollView>
-				<Text style={styles.content}>{feedback}</Text>
+				<KeyboardAvoidingView behavior='padding'>
+					<ScrollView keyboardDismissMode='on-drag'>
+						<TextInput
+							style={styles.textInput}
+							value={email}
+							onChangeText={onChangeEmail}
+							placeholder={"email"}
+							placeholderTextColor={"gray"}
+							keyboardType={"email-address"}
+							onFocus={() => Alert.alert("email was focussed")}
+						/>
+						<TextInput
+							style={styles.textInput}
+							value={password}
+							onChangeText={onChangePassword}
+							placeholder={"password"}
+							placeholderTextColor={"gray"}
+							keyboardType={"default"}
+							secureTextEntry={true}
+							onFocus={() => Alert.alert("password was focussed")}
+						/>
+					</ScrollView>
+				</KeyboardAvoidingView>
 			</View>
 			<View style={styles.footer}>
 				<Footer />
@@ -50,5 +66,12 @@ const styles = StyleSheet.create({
 		bottom: 0,
 		position: "absolute",
 		width: "100%",
+	},
+	textInput: {
+		color: "black",
+		minHeight: 50,
+		margin: 50,
+		textAlign: "justify",
+		backgroundColor: "white",
 	},
 });

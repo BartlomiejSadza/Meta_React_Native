@@ -1,4 +1,5 @@
-import { View, StyleSheet } from "react-native";
+import { View, Text, StyleSheet, Pressable } from "react-native";
+import React, { useState } from "react";
 import Colors from "constants/Colors";
 
 import LittleLemonHeader from "components/LittleLemonHeader";
@@ -7,12 +8,21 @@ import WelcomeScreen from "components/WelcomeScreen";
 import MenuItems from "components/MenuItems";
 
 export default function Index() {
+	const [showMenu, setShowMenu] = useState(false);
+
 	return (
 		<View style={styles.container}>
 			<LittleLemonHeader />
 			<View style={styles.content}>
-				<WelcomeScreen />
-				<MenuItems />
+				{!showMenu && <WelcomeScreen />}
+				<Pressable
+					style={styles.button}
+					onPress={() => setShowMenu((prev) => !prev)}>
+					<Text style={styles.button_text}>
+						{!showMenu ? "Click Here!" : "hide Menu:)"}
+					</Text>
+				</Pressable>
+				{showMenu && <MenuItems />}
 			</View>
 			<View style={styles.footer}>
 				<Footer />
@@ -34,5 +44,20 @@ const styles = StyleSheet.create({
 		bottom: 0,
 		position: "absolute",
 		width: "100%",
+	},
+	button: {
+		position: "relative",
+		margin: "auto",
+		width: 200,
+		height: 50,
+		alignContent: "center",
+		backgroundColor: Colors.white,
+		color: Colors.black,
+		borderRadius: 10,
+		borderWidth: 2,
+	},
+	button_text: {
+		fontSize: 32,
+		textAlign: "center",
 	},
 });

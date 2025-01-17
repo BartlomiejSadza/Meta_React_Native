@@ -1,4 +1,4 @@
-import { View, Text, StyleSheet, Pressable } from "react-native";
+import { View, Text, StyleSheet, Image, Pressable } from "react-native";
 import React, { useState } from "react";
 import Colors from "constants/Colors";
 
@@ -13,6 +13,14 @@ export default function Index() {
 	return (
 		<View style={styles.container}>
 			<LittleLemonHeader />
+			<Image
+				source={require("@/assets/images/react-logo.png")}
+				style={{
+					height: 100,
+					width: 300,
+					resizeMode: "center",
+				}}
+			/>
 			<View style={styles.content}>
 				{!showMenu && <WelcomeScreen />}
 				<Pressable
